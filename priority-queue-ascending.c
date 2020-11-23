@@ -13,11 +13,11 @@ void insertRear(){
 	printf("Enter the value\n");
 	scanf("%d",&value);
 	queue[++rear]=value;
-	if(rear>=1){
-		for(i=1;i<=rear;i++){
+	if(rear>=front){
+		for(i=front+1;i<=rear;i++){
 			small = queue[i];//10 9 8 7 6 5
 			j=i-1;
-			while(j>=0&&queue[j]>small){
+			while(j>=front&&queue[j]>small){
 				queue[j+1]=queue[j];//9 9 8 7 6 5
 				j--;
 			}
